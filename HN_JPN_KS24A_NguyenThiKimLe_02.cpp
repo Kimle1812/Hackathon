@@ -3,7 +3,8 @@ int main(){
 	int choice, del, search, length, arr[100];
 	int odd = 0, even = 0;
 	int a = 0;
-	int b = length -1; 
+	int b = length -1;
+	int addNumber; 
 	do{
 		printf("---MENU---\n");
 	    printf("1.Nhap so phan tu va gia tri cho mang\n");
@@ -43,10 +44,24 @@ int main(){
 						even ++; 
 					} 
 				}
-				printf("Mang co %d so chan và %d so le\n", even, odd);
+				printf("Mang co %d so chan vÃ  %d so le\n", even, odd);
 				break; 
 			case 4://Tim gia tri lon thu hai trong mang
+			    
 			case 5://Them mot phan tu vao dau mang
+			    printf("Moi ban nhap gia tri phan tu muon them vao trong mang: ");
+	            scanf("%d", &addNumber);
+		        for (int i = length + 1; i >= 0; i--){
+                        arr[i] = arr[i - 1];
+                }
+                arr[0] = addNumber;
+                length++;
+                printf("Mang sau khi them phan tu la: ");
+                for (int i = 0; i < length; i++) {
+                    printf("%d ", arr[i]);
+                }
+                printf("\n"); 
+                break; 
 			case 6://Xoa phan tu
 			    printf("Moi ban nhap vi tri phan tu muon xoa:\n");
 				scanf("%d", &del);
