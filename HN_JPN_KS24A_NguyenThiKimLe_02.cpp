@@ -47,7 +47,17 @@ int main(){
 				printf("Mang co %d so chan và %d so le\n", even, odd);
 				break; 
 			case 4://Tim gia tri lon thu hai trong mang
-			    
+			    for(int i = 0; i < length - 1; i++){
+		            for(int j = 0;j < length - 1 - i; j++){
+			            if(arr[j] > arr[j + 1]){
+				            int temp = arr[j];
+				            arr[j] = arr[j + 1];
+				            arr[j + 1] = temp; 
+			            } 
+		            } 
+	            }
+	            printf("Phan tu co gia tri lon thu hai trong mang la: %d\n", arr[length-2]);
+				break; 
 			case 5://Them mot phan tu vao dau mang
 			    printf("Moi ban nhap gia tri phan tu muon them vao trong mang: ");
 	            scanf("%d", &addNumber);
